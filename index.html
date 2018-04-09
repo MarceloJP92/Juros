@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+
+<title>Calculadora</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+body,h1,h5,h3,h2 {font-family: Montserrat, sans-serif } 
+
+body, html {height: 100%}
+
+.bgimg {
+
+background-image: url('ima/money-2696229_960_720.jpg');
+
+background-repeat: no-repeat;
+
+background-size: 100% 100%;
+
+} 
+
+</style>
+
+<script >
+
+function Calcular()
+
+{
+
+var inicial = parseFloat(form1.inicial.value);
+
+var mensal = parseFloat(form1.mensal.value);
+
+var juros = parseFloat(form1.juros.value);
+
+var periodo = parseFloat(form1.periodo.value);
+
+var s = 0;
+
+var m,n,l,a =0;
+
+var tempos = 0;
+
+var taxa =0;
+
+if(form1.tempo.value == "Seleção") {
+
+tempos = 12*periodo;
+
+}else{
+
+tempos = 1*periodo;
+
+}
+
+taxa = juros/100;
+
+s = inicial*(Math.pow(1+taxa,tempos));
+
+a = mensal*((Math.pow(1+taxa,tempos))-1)/taxa;
+
+m =(s+a);
+
+l=tempos*mensal+inicial;
+
+n=m-l;
+
+document.getElementById("total").innerHTML = m.toFixed(2);
+
+document.getElementById("Investido").innerHTML = l.toFixed(2);
+
+document.getElementById("ganho").innerHTML = n.toFixed(2);
+
+}
+
+//S = capital (1 + taxa) mensal + periodo ((1+taxa)mensal-1)/taxa 
+
+//Onde:
+
+//S: É o valor acumulado no período.
+
+//T: É o valor de cada depósito periódico.
+
+//i: É a taxa percentual aplicada ao capital para a apuração do juro (taxa mensal).
+
+//n: É o número de depósitos da aplicação (meses).
+
+</script>
+
+<body >
+
+<div class="bgimg">
+<div style="padding-right:60px">
+<div style=" padding-left: 100px "> 
+
+<font color="black"> 
+
+<center><h1><b> Juros compostos </h1></center></b>
+
+ 
+
+<div align="justify" strong > <h3><p>Os juros compostos são a prática de juros sobre juros. Eles são muito utilizados pelo sistema financeiro, pois oferecem maior rentabilidade se comparados ao juro simples.
+
+<br>O atual sistema financeiro utiliza o regime de juros compostos, pois ele oferece uma maior rentabilidade se comparado com o regime de juros simples, em que o valor dos rendimentos torna-se fixo. O juro composto incide mês a mês de acordo com o somatório acumulativo do capital com o rendimento mensal, isto é, prática do juro sobre juro. As modalidades de investimentos e financiamentos são calculadas de acordo com esse modelo de investimento, pois ele oferece um maior rendimento, originando mais lucro.
+
+<br>Veja um exemplo:<br>
+
+Considere que uma pessoa aplique R$ 500,00 durante 8 meses em um banco que paga 1% de juro ao mês. Qual será o valor ao final da aplicação?
+
+<br>A tabela demonstrará mês a mês a movimentação financeira na aplicação do regime de juros compostos.
+
+<table border="2" color=black>
+
+<tr><td>Mês </td> <td> Capital (R$) </td> <td> Juros % </td> <td>Montante(R$)capital+juros</td></tr>
+
+<tr><td> 1 </td> <td> 500 </td> <td> 1% de 500=5 </td> <td> 505 </td></tr>
+
+<tr><td> 2 </td> <td> 505 </td> <td> 1% de 505=5,05 </td> <td> 510,05 </td></tr>
+
+<tr><td> 3 </td> <td> 510,05 </td> <td> 1% de 510,05=5,10 </td> <td> 515,15 </td></tr>
+
+<tr><td> 4 </td> <td> 515,15 </td> <td> 1% de 515=5,15 </td> <td> 520,30 </td></tr>
+
+<tr><td> 5 </td> <td> 520,30 </td> <td> 1% de 520,30=5,20 </td> <td> 525,50 </td></tr>
+
+<tr><td> 6 </td> <td> 525,50 </td> <td> 1% de 525,50=5,26 </td> <td> 530,76 </td></tr>
+
+<tr><td> 7 </td> <td> 530,76 </td> <td> 1% de 530,76=5,31 </td> <td> 536,07 </td></tr>
+
+<tr><td> 8 </td> <td> 536,07 </td> <td> 1% de 536,07=5,36 </td> <td> 541,43 </td></tr>
+
+</table>
+
+No final do 8º mês, o montante será de R$ 541,43.</p>
+
+ 
+
+Faça uma simulação aqui :
+
+<br>
+
+<br>
+
+<form name="form1" action="#" method="post" >
+
+<input name="inicial" type="text" placeholder="Valor Inicial" required="required" ><br><br>
+
+<input name="mensal" type="text" placeholder="Vaor Mensal" required="required" ><br><br>
+
+<input class="input100" type="text" name="juros" placeholder="Taxa de Juros" required="required" >
+
+<span class="focus-input100"></span>
+
+<span class="symbol-input100"></span>
+
+<i aria-hidden="true"></i></span><br ><br ><!-- step="0.001" min="0" max="100"--> 
+
+<input name="periodo" typ="text" class="focus-input100" class="symbol-input100" placeholder="Quantos Periodos" required="required" ">
+
+<select class="tempoo" name="tempo"> <option value="Seleção">Anos</options> <option value="b">Meses</options> </select> <br><br>
+
+<!-- <p id="V"> Valor: </p>-->
+
+<button class="button" type="button" onclick =" return Calcular()">Calcular</button><br>
+
+<p ><b>Total Investido R$ : <span id="Investido" ></span>
+
+<p >Total ganho em juros R$ : <span Id="ganho" ></span>
+
+<p >Total R$ : <span id="total" ></span><br><br></p></b>
+
+</form>
+
+<!--<button class="button" type="button" onclick =" return Calcular()">Calcular</button><br>-->
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<p>Fonte: <a href="https://brasilescola.uol.com.br/matematica/juros-compostos.htm">Brasil Escola</a></p>
+
+</div>
+</div>
+</body>
+
+</html>
+
+</body>
+
+</html>
+
