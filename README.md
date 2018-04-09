@@ -1,2 +1,2 @@
-# Juros
+http://Juros
 Calculadora
