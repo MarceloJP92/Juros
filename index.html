@@ -27,7 +27,14 @@ background-image: url('ima/money-2696229_960_720.jpg');
 background-repeat: no-repeat;
 background-size:100% 100%;
 } 
-  
+  @media screen and (max-width: 900px) and (min-width: 600px) {
+  div.example {
+    font-size: 50px;
+    padding: 50px;
+    border: 8px solid black;
+    
+  }
+}
   
 </style>
 
@@ -66,7 +73,7 @@ document.getElementById("ganho").innerHTML = n.toFixed(2);
 </script>
 
 <body >
-
+<div class="exemple">
 <div class="bgimg">
 <div style="padding-right:60px">
 <div style=" padding-left: 100px "> 
@@ -151,10 +158,8 @@ Faça uma simulação aqui :
 <p>Fonte: <a href="https://brasilescola.uol.com.br/matematica/juros-compostos.htm">Brasil Escola</a></p>
 </div>
 </div>
+</div>
 </body>
 </html>
 </body>
 </html>
-
-
-
