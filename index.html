@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
-    <title>Calculadora</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Juros Compostos</title>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -20,11 +21,13 @@
             background-image: url('ima/money-2696229_960_720.jpg');
             background-repeat: no-repeat;
             background-size: cover;
-            height: 100vh;
+            background-position: center;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            box-sizing: border-box;
         }
 
         .content {
@@ -32,9 +35,10 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
-            width: 100%;
+            max-width: 100%;
+            width: 600px;
             overflow: auto;
+            box-sizing: border-box;
         }
 
         input, select, button {
@@ -43,6 +47,7 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
         }
 
         button {
@@ -77,6 +82,10 @@
 
             h3 {
                 font-size: 16px;
+            }
+
+            .bgimg {
+                background-size: contain; /* Ajusta a imagem de fundo no mobile */
             }
         }
     </style>
@@ -194,4 +203,5 @@
         </div>
     </div>
 </body>
+
 </html>
