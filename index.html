@@ -28,12 +28,13 @@
         }
 
         .content {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             max-width: 600px;
             width: 100%;
+            overflow: auto;
         }
 
         input, select, button {
@@ -52,6 +53,21 @@
 
         button:hover {
             background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 2px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
         }
 
         @media screen and (max-width: 600px) {
@@ -99,14 +115,15 @@
             <center>
                 <h1><b>Juros Compostos</b></h1>
             </center>
-            <h3>Os juros compostos são a prática de juros sobre juros. Eles são muito utilizados pelo sistema financeiro...</h3>
+            <h3>Os juros compostos são a prática de juros sobre juros. Eles são muito utilizados pelo sistema financeiro, pois oferecem maior rentabilidade se comparados ao juro simples.</h3>
+            <p>O atual sistema financeiro utiliza o regime de juros compostos, pois ele oferece uma maior rentabilidade se comparado com o regime de juros simples, em que o valor dos rendimentos torna-se fixo. O juro composto incide mês a mês de acordo com o somatório acumulativo do capital com o rendimento mensal, isto é, prática do juro sobre juro. As modalidades de investimentos e financiamentos são calculadas de acordo com esse modelo de investimento, pois ele oferece um maior rendimento, originando mais lucro.</p>
             <p>Veja um exemplo:</p>
-            <table border="2">
+            <table>
                 <tr>
-                    <td>Mês</td>
-                    <td>Capital (R$)</td>
-                    <td>Juros %</td>
-                    <td>Montante (R$)</td>
+                    <th>Mês</th>
+                    <th>Capital (R$)</th>
+                    <th>Juros %</th>
+                    <th>Montante (R$)</th>
                 </tr>
                 <tr>
                     <td>1</td>
@@ -114,8 +131,51 @@
                     <td>1% de 500=5</td>
                     <td>505</td>
                 </tr>
-                <!-- continue com os dados da tabela -->
+                <tr>
+                    <td>2</td>
+                    <td>505</td>
+                    <td>1% de 505=5,05</td>
+                    <td>510,05</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>510,05</td>
+                    <td>1% de 510,05=5,10</td>
+                    <td>515,15</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>515,15</td>
+                    <td>1% de 515=5,15</td>
+                    <td>520,30</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>520,30</td>
+                    <td>1% de 520,30=5,20</td>
+                    <td>525,50</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>525,50</td>
+                    <td>1% de 525,50=5,26</td>
+                    <td>530,76</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>530,76</td>
+                    <td>1% de 530,76=5,31</td>
+                    <td>536,07</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>536,07</td>
+                    <td>1% de 536,07=5,36</td>
+                    <td>541,43</td>
+                </tr>
             </table>
+            <p>No final do 8º mês, o montante será de R$ 541,43.</p>
+            <p>Faça uma simulação aqui:</p>
             <form name="form1" action="#" method="post">
                 <input name="inicial" type="text" placeholder="Valor Inicial" required>
                 <input name="mensal" type="text" placeholder="Valor Mensal" required>
